@@ -1,2 +1,1 @@
-# js-pro-course
-## Suhobski Alexander
+# Suhobski Alexander. js-pro-course
