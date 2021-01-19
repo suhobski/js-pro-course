@@ -28,21 +28,21 @@ Car.prototype.changeColor = function(newColor) {
 }
 
 Car.prototype.calculateWay = function(kilometers, fuel) {
-  var averageSpeed = 50
+  const averageSpeed = 50
   
   if (fuel < 10) {
     console.log('Маловато топлива');
     return
   }
 
-  var averageTravelTime = kilometers / averageSpeed
+  const averageTravelTime = kilometers / averageSpeed
   console.log('Среднее время в пути: ' + averageTravelTime + ' ч.');
 
   if (kilometers < fuel / this.fuelConsumption * 100) {
     console.log('В пути не нужна дозаправка');
   } else {
-    var missingKilometers = kilometers - fuel / this.fuelConsumption * 100
-    var missingFuel = missingKilometers / this.fuelConsumption
+    const missingKilometers = kilometers - fuel / this.fuelConsumption * 100
+    const missingFuel = missingKilometers / this.fuelConsumption
     console.log('Нужно дозаправиться на ' + missingFuel + ' литров топлива');
   }
 }
@@ -85,25 +85,31 @@ function UAZ(name, model, year, color, maxSpeed, owner) {
 }
 // UAZ END ==================================================================================================
 
+console.log('***************   ES5   ***************');
 
-var myBMW = new BMW('BMW', 'X5', 2010, 'red', 300, 60, 15)
-console.log(myBMW.getFullName());
-console.log(myBMW.getAge())
+const myBMW = new BMW('BMW', 'X5', 2010, 'red', 300, 60, 15)
+console.log('*** BMW ***');
+console.log('get full name: ', myBMW.getFullName());
+console.log('Get age: ', myBMW.getAge())
 myBMW.calculateWay(700, 20)
+console.log('');
 
-var myBrotherMercedes = new Mercedes('Mercedes', 'S600', 2020, 'white', 350, 120_000, 80, 20)
+const myBrotherMercedes = new Mercedes('Mercedes', 'S600', 2020, 'white', 350, 120_000, 80, 20)
+console.log('*** Mercedes ***');
 console.log(myBrotherMercedes);
-console.log(myBrotherMercedes.getFullName());
-console.log(myBrotherMercedes.getPrice())
-console.log(myBrotherMercedes.getAge())
+console.log('get full name: ', myBrotherMercedes.getFullName());
+console.log('get price: ', myBrotherMercedes.getPrice())
+console.log('get age: ', myBrotherMercedes.getAge())
 myBrotherMercedes.calculateWay(300, 60)
+console.log('');
 
-var myDadCar = new UAZ('UAZ', 2021, 1990, 'grey', 70, 'myDad')
+const myDadCar = new UAZ('UAZ', 2021, 1990, 'grey', 70, 'myDad')
+console.log('*** UAZ ***');
 console.log(myDadCar)
-console.log(myDadCar.getFullName())
+console.log('get full name: ', myDadCar.getFullName())
 myDadCar.calculateWay(50, 9)
-console.log(myDadCar.getOwner())
-
+console.log('get owner: ',myDadCar.getOwner())
+console.log('');
 //! ES6 =====================================================================================================
 // CAR2 =====================================================================================================
 class Car2 {
@@ -135,21 +141,21 @@ class Car2 {
   }
   
   calculateWay(kilometers, fuel) {
-    var averageSpeed = 50
+    const averageSpeed = 50
     
     if (fuel < 10) {
       console.log('Маловато топлива');
       return
     }
   
-    var averageTravelTime = kilometers / averageSpeed
+    const averageTravelTime = kilometers / averageSpeed
     console.log('Среднее время в пути: ' + averageTravelTime + ' ч.');
   
     if (kilometers < fuel / this.fuelConsumption * 100) {
       console.log('В пути не нужна дозаправка');
     } else {
-      var missingKilometers = kilometers - fuel / this.fuelConsumption * 100
-      var missingFuel = missingKilometers / this.fuelConsumption
+      const missingKilometers = kilometers - fuel / this.fuelConsumption * 100
+      const missingFuel = missingKilometers / this.fuelConsumption
       console.log('Нужно дозаправиться на ' + missingFuel + ' литров топлива');
     }
   }
@@ -195,14 +201,22 @@ class ZAZ extends Car2 {
 }
 // ZAZ END ==================================================================================================
 
+console.log('***************   ES6   ***************');
+
 const opel = new Opel(2000, 'Opel', 'Astra', 1999, 'smoke', 150, 50, 13)
-console.log(opel.getFullName());
-console.log(opel.getAge())
+console.log('*** Opel ***');
+console.log('get full name: ',opel.getFullName());
+console.log('get age: ',opel.getAge())
+console.log('');
+
 
 const ferrari = new Ferrari('Michael Schumacher', 'Ferrari', 'ENZO', 2019, 'red', 350, 150, 30)
+console.log('*** Ferrari ***');
 console.log(ferrari);
 ferrari.changeColor('white')
+console.log('');
 
 const zaz = new ZAZ('Somebody', 'ZAZ', 'ZP1', 1960, 'yellow', 80, 45, 15)
+console.log('*** ZAZ ***');
 console.log(zaz);
-console.log(zaz.displayFullInformation());
+console.log('get owner: ',zaz.getOwner());
