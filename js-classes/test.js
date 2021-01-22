@@ -8,17 +8,20 @@ describe('UNIT TESTS', function () {
 
             it('check BMW model', function () {
                 const bmwModel = bmw.model
-                assert.equal(bmwModel, 'X7');
+                const expectedModel = 'X7'
+                assert.equal(bmwModel, expectedModel);
             });
 
             it('check BMW color', function () {
                 const bmwColor = bmw.color
-                assert.equal(bmwColor, 'white');
+                const expectedColor = 'white'
+                assert.equal(bmwColor, expectedColor);
             });
 
             it('check BMW wheelDrive', function () {
                 const bmwWheelDrive = bmw.wheelDrive
-                assert.equal(bmwWheelDrive, 'front-wheel');
+                const expectedWhellDrive = 'front-wheel'
+                assert.equal(bmwWheelDrive, expectedWhellDrive);
             });
             
             it('check BMW function takePartInRaces()', function () {
@@ -29,21 +32,24 @@ describe('UNIT TESTS', function () {
 
         describe('class Mercedes', function () {
             
-            const testMercedes = new Mercedes('Mercedes', 'CLK320', 2000, 'white', 270, 20_000, 60, 17)
+            const mercedes = new Mercedes('Mercedes', 'CLK320', 2000, 'white', 270, 20_000, 60, 17)
 
             it('check Mercedes model', function () {
-                const testMercedesModel = testMercedes.model
-                assert.equal(testMercedesModel, 'CLK320');
+                const mercedesModel = mercedes.model
+                const expectedModel = 'CLK320'
+                assert.equal(mercedesModel, expectedModel);
             });
 
             it('check Mercedes color', function () {
-                const testMercedesColor = testMercedes.color
-                assert.equal(testMercedesColor, 'white');
+                const mercedesColor = mercedes.color
+                const expectedColor = 'white'
+                assert.equal(mercedesColor, expectedColor);
             });
             
             it('check Mercedes function getPrice()', function () {
-                const testMercedesPrice = testMercedes.getPrice()
-                assert.equal(testMercedesPrice, 20000);
+                const mercedesPrice = mercedes.getPrice()
+                const expectedPrice = 20000;
+                assert.equal(mercedesPrice, expectedPrice);
             });
         });
 
@@ -53,12 +59,14 @@ describe('UNIT TESTS', function () {
 
             it('check UAZ function getOwner()', function () {
                 const testUAZOwner = testUAZ.getOwner()
-                assert.equal(testUAZOwner, 'John');
+                const expectedOwner = 'John'
+                assert.equal(testUAZOwner, expectedOwner);
             });
 
             it('check UAZ function getFullName()', function () {
                 const testUAZFullName = testUAZ.getFullName()
-                assert.equal(testUAZFullName, 'UAZ 2021');
+                const expectedFullName = 'UAZ 2021'
+                assert.equal(testUAZFullName, expectedFullName);
             });
 
         });
@@ -73,17 +81,20 @@ describe('UNIT TESTS', function () {
 
             it('check Opel model', function () {
                 const opelModel = opel.model
-                assert.equal(opelModel, 'Astra');
+                const expectedModel = 'Astra'
+                assert.equal(opelModel, expectedModel);
             });
 
             it('check Opel color', function () {
                 const opelColor = opel.color
-                assert.equal(opelColor, 'smoke');
+                const expectedColor = 'smoke'
+                assert.equal(opelColor, expectedColor);
             });
 
             it('check Opel function getPrice()', function () {
                 const opelPrice = opel.getPrice()
-                assert.equal(opelPrice, 2000);
+                const expectedPrice = 2000
+                assert.equal(opelPrice, expectedPrice);
             });
 
         });
@@ -94,17 +105,20 @@ describe('UNIT TESTS', function () {
 
             it('check Ferrari fuelCapacity', function () {
                 const ferrariFuelCapacity = ferrari.fuelCapacity
-                assert.equal(ferrariFuelCapacity, 100);
+                const expectedCapacity = 100
+                assert.equal(ferrariFuelCapacity, expectedCapacity);
             });
 
             it('check Ferrari fuelConsumption', function () {
                 const ferrariFuelConsumption = ferrari.fuelConsumption
-                assert.equal(ferrariFuelConsumption, 30);
+                const expectedFuelConsuption = 30
+                assert.equal(ferrariFuelConsumption, expectedFuelConsuption);
             });
             
             it('check Ferrari function getDriverName()', function () {
                 const ferrariDriverName = ferrari.getDriverName()
-                assert.equal(ferrariDriverName, 'Fernando Alonso');
+                const expectedDriverName = 'Fernando Alonso'
+                assert.equal(ferrariDriverName, expectedDriverName);
             });
         });
 
@@ -114,20 +128,24 @@ describe('UNIT TESTS', function () {
 
             it('check ZAZ fuelConsumption by default value', function () {
                 const zazFuelConsumption = zaz.fuelConsumption
-                assert.equal(zazFuelConsumption, 10);
+                const expectedFuelConsuption = 10
+                assert.equal(zazFuelConsumption, expectedFuelConsuption);
             });
 
             it('check ZAZ fuelCapacity by default value', function () {
                 const zazFuelCapacity = zaz.fuelCapacity
-                assert.equal(zazFuelCapacity, 60);
+                const expectedFuelCapacity = 60
+                assert.equal(zazFuelCapacity, expectedFuelCapacity);
             });
 
             it('check ZAZ year', function () {
                 const zazYear = zaz.year
-                assert.equal(zazYear, 1960);
+                const expectedYear = 1960
+                assert.equal(zazYear, expectedYear);
             });
 
         });
 
     });
+    
 });
