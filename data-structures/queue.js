@@ -4,35 +4,51 @@ function Node(data) {
 }
 
 // Queue ====================
-const queue = []
+function Queue() {
+	const queue = [];
 
-function isEmpty(queue) {
-  return queue.length == 0;
+	function add (value) {
+    const node = new Node(value)
+    queue.push(node)
+  }
+  
+  function peek() {
+    return queue[0]?.data
+  }
+  
+  function remove() {
+    return queue.shift().data
+  }
+  
+  function isEmpty() {
+    return queue.length == 0;
+  }
+	
+	return {
+  	add,
+    peek,
+    remove,
+    isEmpty,
+  }
 }
 
-function peek(queue) {
-  return queue[0]?.data
-}
+const queue = new Queue()
 
-function add(queue, data) {
-  const node = new Node(data)
-  queue.push(node)
-  return queue.length
-}
-
-function remove(queue) {
-  return queue.shift().data
-}
+console.log(queue);
 
 console.group('Queue')
-  console.log('is empty: ' + isEmpty(queue))
-  console.log(add(queue, 'first'))
-  console.log(add(queue, 'second'))
-  console.log(add(queue, 'third'))
-  console.log('peek: ' + peek(queue))
-  console.log('remove: ' + remove(queue))
-  console.log('remove: ' + remove(queue))
-  console.log('is empty: ' + isEmpty(queue))
-  console.log('remove: ' + remove(queue))
-  console.log('is empty: ' + isEmpty(queue))
+  console.log('is empty: ' + queue.isEmpty())
+  console.log('peek: ' + queue.peek())
+  queue.add('first')
+  console.log('add first')
+  queue.add('second')
+  console.log('add second')
+  queue.add('third')
+  console.log('add third')
+  console.log('peek: ' + queue.peek())
+  console.log('remove: ' + queue.remove())
+  console.log('remove: ' + queue.remove())
+  console.log('is empty: ' + queue.isEmpty())
+  console.log('remove: ' + queue.remove())
+  console.log('is empty: ' + queue.isEmpty())
 console.groupEnd();

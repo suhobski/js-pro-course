@@ -4,37 +4,53 @@ function Node(data) {
 }
 
 // Stack ====================
-const stack = []
+function Stack() {
+	const stack = [];
 
-function isEmpty(stack) {
-  return stack.length == 0;
+	function add (value) {
+    const node = new Node(value)
+    stack.push(node)
+    return stack.length
+  }
+  
+  function peek() {
+    const lastIndex = stack.length - 1
+    return stack[lastIndex]?.data
+  }
+  
+  function remove() {
+    return stack.pop().data
+  }
+  
+  function isEmpty() {
+    return stack.length == 0;
+  }
+	
+	return {
+  	add,
+    peek,
+    remove,
+    isEmpty,
+  }
 }
 
-function peek(stack) {
-  const lastIndex = stack.length - 1
-  return stack[lastIndex]?.data
-}
+const stack = new Stack()
 
-function add(stack, data) {
-  const node = new Node(data)
-  stack.push(node)
-  return stack.length
-}
-
-function remove(stack) {
-  return stack.pop().data
-}
+console.log(stack);
 
 console.group('Stack')
-  console.log('is empty: ' + isEmpty(stack))
-  console.log('peek: ' + peek(stack))
-  console.log(add(stack, 'first'))
-  console.log(add(stack, 'second'))
-  console.log(add(stack, 'third'))
-  console.log('peek: ' + peek(stack))
-  console.log('remove: ' + remove(stack))
-  console.log('remove: ' + remove(stack))
-  console.log('is empty: ' + isEmpty(stack))
-  console.log('remove: ' + remove(stack))
-  console.log('is empty: ' + isEmpty(stack))
+  console.log('is empty: ' + stack.isEmpty())
+  console.log('peek: ' + stack.peek())
+  stack.add('first')
+  console.log('add first')
+  stack.add('second')
+  console.log('add second')
+  stack.add('third')
+  console.log('add third')
+  console.log('peek: ' + stack.peek())
+  console.log('remove: ' + stack.remove())
+  console.log('remove: ' + stack.remove())
+  console.log('is empty: ' + stack.isEmpty())
+  console.log('remove: ' + stack.remove())
+  console.log('is empty: ' + stack.isEmpty())
 console.groupEnd();
