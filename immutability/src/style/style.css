@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'fontAwesome';
+  src:  url('../fonts//fa-regular-400.ttf') format('ttf');
+  font-weight: 400;
+  font-style: 'regular';
+}
+
+#mocha {
+  padding: 1em;
+
+  background: lightsteelblue;
+  color: #FFFFFF;
+  border-radius: 1em 1em 0 0;
+}
+
+#mocha .test.pass::before {
+  color: darkcyan;
+}
