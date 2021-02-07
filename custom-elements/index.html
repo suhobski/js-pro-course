@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Canban</title>
+</head>
+<body>
+<div class="page">
+  <header class="header">
+    Simple kanban
+  </header>
+  <main>
+    <button class="slider__slide-left"></button>
+    <div class="board">
+      <div class="card">
+        <div class="card__header">
+          <h2 class="card__title card__title--todo">To do</h2>
+          <p class="card__title card__title--todo card__counter--todo"></p>  
+        </div>
+        <ul class="card__list card__list--todo">
+        </ul>
+        <div class="card__footer card__footer--todo">
+          <button class="card__button card__button--todo card__button--add-task">Add task</button>
+          <button class="card__button card__button--todo card__button--todo--clear-all">Clear all</button>
+        </div>
+      </div> 
+      <!-- card todo -->
+      <div class="card">
+        <div class="card__header">
+          <h2 class="card__title card__title--in-progress">In progress</h2>
+          <p class="card__title card__title--in-progress card__counter--in-ppogress" ></p>
+        </div>
+        <ul class="card__list card__list--in-progress">
+        </ul>
+        <div class="card__footer">
+          <button class="card__button card__button--in-progress card__button--in-progress--clear-all">Clear all</button>
+        </div>
+      </div> 
+      <!-- card in-progress -->
+      <div class="card">
+        <div class="card__header">
+          <h2 class="card__title card__title--done">Done</h2>
+          <p class="card__title card__title--done card__counter--done"></p>
+        </div>
+        <ul class="card__list card__list--done">
+        </ul>
+        <div class="card__footer">
+          <button class="card__button card__button--done card__button--done--clear-all">Clear all</button>
+        </div>
+      </div>
+      <!-- card done -->
+      <div class="right"></div>
+    </div> <!-- board -->
+    <button class="slider__slide-right"></button>
+  </main>
+  <footer class="footer">
+    <div class="slider__dots">
+      <span class="slider__dots--todo"></span>
+      <span class="slider__dots--in-progress"></span>
+      <span class="slider__dots--done"></span>
+    </div>
+    <p class="footer__text">A. Suhobski, 2020</p>
+  </footer>
+  <div class="modal-add-task">
+    <div class="modal-add-task__container">
+        <h4 class="modal-add-task__title">Add task</h4>
+        <form class="modal-add-task__body">
+            <textarea class="modal-add-task__field modal-add-task__field--title" placeholder="Title" rows="1"></textarea> 
+            <select class="modal-add-task__field modal-add-task__field--user-list">
+              <option class="modal-add-task__field--user" value="" selected disabled>Chose user...</option>
+            </select>
+            <textarea class="modal-add-task__field modal-add-task__field--comment" placeholder="Add comment..." rows="3"></textarea>
+        </form>
+        <div class="modal-add-task__footer">
+          <button class="card__button modal-add-task__button modal-add-task__button--ok">OK</button>
+          <button class="card__button modal-add-task__button modal-add-task__button--cancel">Cancel</button>
+        </div>
+    </div>
+  </div>
+  <!-- / modal-add-task -->
+  <modal-add-task></modal-add-task>
+  <div class="modal-alert">
+    <div class="modal-alert__container">
+        <h4 class="modal-alert__title">You must complete one of the tasks before adding a new one</h4>
+        <div class="modal-alert__footer">
+          <button class="card__button modal-alert__button">OK</button>
+        </div>
+    </div>
+  </div><!-- / modal-alert -->
+  <div class="modal-delete-task">
+    <div class="modal-delete-task__container">
+        <h4 class="modal-delete-task__title">Delete task?</h4>
+        <div class="modal-delete-task__footer">
+          <button class="card__button modal-delete-task__button modal-delete-task__button--ok">OK</button>
+          <button class="card__button modal-delete-task__button modal-delete-task__button--cancel">Cancel</button>
+        </div>
+    </div>
+  </div><!-- / modal-delete-task -->
+</div> <!-- page -->
+
+<template class="taskTemplate">
+  <li class="task">
+    <div class="task__header">
+      <span class="task__owner"></span>
+    </div>
+    <h3 class="task__title"></h3>
+    <div class="task__footer">
+      <span class="task__date"></span>
+      <button class="task__button task__button--delete"></button>
+      <button class="task__button task__button--move"></button>
+    </div>
+  </li>
+</template>
+<template class="commentTemplate">
+  <p class="task__comment">${comment}<button class="task__button--full-comment">...more</button></p>
+</template>
+</body>
+</html>

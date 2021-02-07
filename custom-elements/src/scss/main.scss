@@ -1,0 +1,16 @@
+@import './config/normalize';
+@import './config/variables';
+@import './config/mixins';
+@import './config/baseLayout';
+
+@import './components/board';
+@import './components/task';
+@import './components/card';
+@import './components/modalAddTask';
+@import './components/modalAlert';
+@import './components/modalDeleteTask';
+@import './components/slider';
+
+
+
+@import './config/media';
