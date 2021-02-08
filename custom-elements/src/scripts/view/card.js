@@ -1,24 +1,12 @@
 import { displayTask } from './taskView.js'
 import { hideAllComments } from './commentView.js'
 
-// ! Списки задач ==========================================================================================
-const cardListTodo = document.querySelector('.card__list--todo')
-const cardListInProgress = document.querySelector('.card__list--in-progress')
-const cardListDone = document.querySelector('.card__list--done')
-
-// ! Счетчики задач ========================================================================================
-const counterTodo = document.querySelector('.card__counter--todo')
-const counterInProgress = document.querySelector('.card__counter--in-ppogress')
-const counterDone = document.querySelector('.card__counter--done')
-
-// ! Кнопки удалить задачу =================================================================================
-const deleteTasksTodo = document.querySelector('.card__button--todo--clear-all')
-const deleteTasksInProgress = document.querySelector('.card__button--in-progress--clear-all')
-const deleteTasksDone = document.querySelector('.card__button--done--clear-all')
-
-
 // загружаем из localStorage задачи после перезагрузки======================================================
 export function loadTasks() {
+  // ! Списки задач ==========================================================================================
+  const cardListTodo = document.querySelector('.card__list--todo')
+  const cardListInProgress = document.querySelector('.card__list--in-progress')
+  const cardListDone = document.querySelector('.card__list--done')
   
   // в список "To do"
   const todoArray = JSON.parse(localStorage.getItem('todo'))
@@ -38,6 +26,16 @@ export function loadTasks() {
 
 // изменяем счетчик количества задач в каждом списке=======================================================
 export function taskCounter() {
+  // ! Списки задач ==========================================================================================
+  const cardListTodo = document.querySelector('.card__list--todo')
+  const cardListInProgress = document.querySelector('.card__list--in-progress')
+  const cardListDone = document.querySelector('.card__list--done')
+
+  // ! Счетчики задач ========================================================================================
+  const counterTodo = document.querySelector('.card__counter--todo')
+  const counterInProgress = document.querySelector('.card__counter--in-ppogress')
+  const counterDone = document.querySelector('.card__counter--done')
+
   counterTodo.innerText = cardListTodo.childElementCount
   counterInProgress.innerText = cardListInProgress.childElementCount
   counterDone.innerText = cardListDone.childElementCount
@@ -45,6 +43,10 @@ export function taskCounter() {
 
 // удалить все задачи из списка (кнопка "Clear all")=======================================================
 export function clearAllTasks() {
+  // ! Кнопки удалить задачу =================================================================================
+  const deleteTasksTodo = document.querySelector('.card__button--todo--clear-all')
+  const deleteTasksInProgress = document.querySelector('.card__button--in-progress--clear-all')
+  const deleteTasksDone = document.querySelector('.card__button--done--clear-all')
 
   // из списка "To do"
   deleteTasksTodo.addEventListener('click', () => {

@@ -3,17 +3,17 @@ import { closeModalAddTask } from '../view/modalAddTask.js'
 import { displayTask } from '../view/taskView.js'
 import { saveTaskInLocalStorage } from './localStorage.js'
 
-// ! Список задач "To do" ===================================================================================
-const cardListTodo = document.querySelector('.card__list--todo')
-
-// ! Поля модального окна "Add task" ========================================================================
-let modalTitle = document.querySelector('.modal-add-task__field--title')
-let modalUser = document.querySelector('.modal-add-task__field--user-list')
-let modalComment = document.querySelector('.modal-add-task__field--comment')
-let buttonOk = document.querySelector('.modal-add-task__button--ok')
-
 // Действие кнопки "Add task" ===============================================================================
 export function addTask() {
+  // ! Список задач "To do" ===================================================================================
+  const cardListTodo = document.querySelector('.card__list--todo')
+
+  // ! Поля модального окна "Add task" ========================================================================
+  let modalTitle = document.querySelector('.modal-add-task__field--title')
+  let modalUser = document.querySelector('.modal-add-task__field--user-list')
+  let modalComment = document.querySelector('.modal-add-task__field--comment')
+  let buttonOk = document.querySelector('.modal-add-task__button--ok')
+
   buttonOk.addEventListener('click', () => {
     let taskTitle = modalTitle.value
     let taskUser = modalUser.options[modalUser.selectedIndex].value

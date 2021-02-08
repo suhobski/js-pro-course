@@ -3,13 +3,13 @@ import { taskCounter } from '../view/card.js'
 import { hideComment } from '../view/commentView.js'
 import { openModalAlert } from '../view/modalAlert.js'
 
-// ! Списки задач ===========================================================================================
-const cardListTodo = document.querySelector('.card__list--todo')
-const cardListInProgress = document.querySelector('.card__list--in-progress')
-const cardListDone = document.querySelector('.card__list--done')
-
 // Перенос задачи из одного списка в другой =================================================================
 export function moveTask() {
+  // ! Списки задач ===========================================================================================
+  const cardListTodo = document.querySelector('.card__list--todo')
+  const cardListInProgress = document.querySelector('.card__list--in-progress')
+  const cardListDone = document.querySelector('.card__list--done')
+
   // из "To do" в "In progress"
   moveFromTodoToInProgress()
   
@@ -56,9 +56,12 @@ export function moveTask() {
 }
 
 function moveFromTodoToInProgress() {
+  // ! Списки задач ===========================================================================================
+  const cardListTodo = document.querySelector('.card__list--todo')
+  const cardListInProgress = document.querySelector('.card__list--in-progress')
+
   cardListTodo.addEventListener('click', event => {
     if (event.target.classList.contains('task__button--move')) {
-      
       // проверяем количество задач в списке "In progress"
       if (localStorage.getItem('inProgress') && (JSON.parse(localStorage.getItem('inProgress'))).length == 5) {
         openModalAlert()

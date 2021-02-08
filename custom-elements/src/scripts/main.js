@@ -5,7 +5,6 @@ import '../scss/main.scss'
 controller()
 view()
 
-
 // Shadow DOM START
 const shadowHeader = document.querySelector('.header').attachShadow({mode: 'open'});
 shadowHeader.innerHTML = `<style>

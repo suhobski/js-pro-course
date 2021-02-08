@@ -1,13 +1,11 @@
 import { taskCounter } from './card.js'
 import { deleteTaskFromLocalStorage } from '../controller/localStorage.js'
 
-// ! Переменные модального окна удаления ====================================================================
-const modalDelete = document.querySelector('.modal-delete-task')
-const buttonOk = document.querySelector('.modal-delete-task__button--ok')
-const buttonCansel = document.querySelector('.modal-delete-task__button--cancel')
-
 // показать модальное окно предупреждения удаления ==========================================================
 export function displayModalDelete(event) {
+  const modalDelete = document.querySelector('.modal-delete-task')
+  const buttonOk = document.querySelector('.modal-delete-task__button--ok')
+
   modalDelete.style.visibility = 'visible'
   modalDelete.style.opacity = '1'
 
@@ -25,6 +23,9 @@ export function displayModalDelete(event) {
 
 // закрыть модальное окно ===================================================================================
 function closeModalDelete() {
+  const modalDelete = document.querySelector('.modal-delete-task')
+  const buttonCansel = document.querySelector('.modal-delete-task__button--cancel')
+
   modalDelete.addEventListener('click', event => {
     if (event.target === modalDelete || event.target === buttonCansel) {
       modalDelete.style.visibility = 'hidden'

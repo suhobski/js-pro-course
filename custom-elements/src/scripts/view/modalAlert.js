@@ -1,15 +1,16 @@
-// ! Переменные модального окна предупреждения ==============================================================
-const modalAlert = document.querySelector('.modal-alert')
-const buttonModalAlert = document.querySelector('.modal-alert__button')
-
 // открыть модальное окно ===================================================================================
 export function openModalAlert() {
+  const modalAlert = document.querySelector('.modal-alert')
+
   modalAlert.style.visibility = 'visible'
   modalAlert.style.opacity = '1'
 }
 
 // закрыть модальное окно ===================================================================================
 export function closeModalAlert() {
+  const modalAlert = document.querySelector('.modal-alert')
+  const buttonModalAlert = document.querySelector('.modal-alert__button')
+
   modalAlert.addEventListener('click', (event) => {
     if (event.target === modalAlert || event.target === buttonModalAlert)
     modalAlert.style.visibility = 'hidden'

@@ -1,13 +1,10 @@
 import { getUsersData } from '../model/serverData.js'
 
-// Переменные
-let modalAddTask = document.querySelector('.modal-add-task')
-let buttonAddTask = document.querySelector('.card__button--add-task')
-let buttonOk = document.querySelector('.modal-add-task__button--ok')
-let buttonCancel = document.querySelector('.modal-add-task__button--cancel')
-
 // открыть модальное окно при нажатии кнопки "Add task"
 export function displayModalAddTask() {
+  const modalAddTask = document.querySelector('.modal-add-task')
+  const buttonAddTask = document.querySelector('.card__button--add-task')
+
   buttonAddTask.addEventListener('click', () => {
     modalAddTask.style.visibility = 'visible'
     modalAddTask.style.opacity = '1'
@@ -16,6 +13,8 @@ export function displayModalAddTask() {
 
 // закрыть модальное окно
 export function closeModalAddTaskListeners() {
+  const modalAddTask = document.querySelector('.modal-add-task')
+  const buttonCancel = document.querySelector('.modal-add-task__button--cancel')
 
   // при нажатии кнопки "Cancel" или мимо модального окна
   modalAddTask.addEventListener('click', event => {
@@ -44,6 +43,8 @@ export function createListOfUsers() {
 
 // закрыть модальное окно "Add task"
 export function closeModalAddTask() {
+  const modalAddTask = document.querySelector('.modal-add-task')
+
   modalAddTask.style.visibility = 'hidden'
   modalAddTask.style.opacity = '0'
 }

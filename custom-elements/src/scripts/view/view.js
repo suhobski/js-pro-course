@@ -3,7 +3,7 @@ import { deleteTask } from './taskView.js'
 import { loadTasks, taskCounter, clearAllTasks } from './card.js'
 import { displayComment } from './commentView.js'
 import { closeModalAlert } from './modalAlert.js'
-import { slider } from './slider.js'
+import { slider, swipe } from './slider.js'
 
 
 export function view() {
@@ -28,4 +28,5 @@ export function view() {
 
   // Слайдер
   slider()
+  swipe()
 }

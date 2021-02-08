@@ -24,13 +24,13 @@ export function displayTask(where, task) {
 
   if (comment) {
     let commentNode = document.importNode(commentTemplate, true)
-    commentNode.innerText = comment
+    commentNode.prepend(comment)
     taskNode.querySelector('.task__title').after(commentNode)
   }
 
 
   // Добавляем задачу в карточку
-  where.before(taskNode)
+  where.append(taskNode)
 
   // пересчитываем количество задач в каждом списке
   taskCounter()
