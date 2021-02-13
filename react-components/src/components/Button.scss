@@ -1,0 +1,20 @@
+.Button {
+  height: 40px;
+  max-width: 200px;
+
+  font-size: 20px;
+
+  background: whitesmoke;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  &:hover {
+    background: rgb(221, 220, 220);;
+  }
+  
+  &:active {
+    border: 1px solid grey;
+  }
+}

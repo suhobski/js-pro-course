@@ -1,0 +1,42 @@
+.BookInput {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+
+  margin-bottom: 20px;
+  padding: 20px;
+
+  background: darkgrey;
+  border-radius: 8px;
+
+  & input[type="text"] {
+    padding-left: 40px;
+    height: 40px;
+
+    font-size: 20px;
+
+    border-radius: 8px;
+    border: none;
+    outline: none;
+  }
+
+  & input[type="submit"] {
+    height: 40px;
+    max-width: 200px;
+
+    font-size: 20px;
+
+    background: whitesmoke;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+
+    &:hover {
+      border: 1px solid grey;
+    }
+
+    &:active {
+      background: rgb(221, 220, 220);;
+    }
+  }
+}
