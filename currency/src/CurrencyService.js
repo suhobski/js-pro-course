@@ -35,16 +35,16 @@ export default {
 }
 
 
-const cache = {};
+// const cache = {};
 
-function asyncGet(id) {
+// function asyncGet(id) {
 
-}
+// }
 
-function getById(id) {
-    if (!cache[id]) {
-        cache[id] = asyncGet(id);
-    }
+// function getById(id) {
+//     if (!cache[id]) {
+//         cache[id] = asyncGet(id);
+//     }
 
-    return cache[id];
-}
+//     return cache[id];
+// }

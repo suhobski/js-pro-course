@@ -1,0 +1,130 @@
+.card{
+
+  @include xs {
+    min-width: 90vw;
+    margin: 0 5vw;
+  }
+
+  @include sm {
+    transform: translateX(0);
+  }
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+  padding: 8px;
+
+  position: relative;
+  max-width: 500px;
+  min-width: 200px;
+  
+  background: #F3F4F4;
+  border-radius: 12px;
+
+  transition: all 0.5s;
+
+  &:nth-child(2) {
+    @include sm {
+      margin: 0 .5em;
+    }
+
+    @include xs {
+      margin: 0 5vw;
+    }
+
+    margin: 0 1em;
+  }
+
+  &__header{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title{
+    display: block;
+    margin-bottom: 8px;
+    padding: 4px 12px;
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: -0.2px;
+    color: #4D4D4D;
+
+    border-radius: 20px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
+
+    &--todo{
+      background: $rose;
+    }
+
+    &--in-progress{
+      background: $green;
+    }
+
+    &--done{
+      background: $lavender;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: flex-end;
+
+    &--todo {
+      justify-content: space-between
+    }
+  }
+
+  &__button {
+    width: 100px;
+    margin-left: 8px;
+    padding: 4px 12px;
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: -0.2px;
+    color: #4D4D4D;
+
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
+
+    transition: .2s linear;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &--todo{
+      background: $rose;
+
+      &:hover {
+        background: #FAC6CC;
+      }
+    }
+    
+    &--in-progress {
+      background: $green;
+
+      &:hover {
+        background: #A9CABE;
+      }
+    }
+
+    &--done{
+      background: $lavender;
+
+      &:hover {
+        background: #D4C5DF;
+      }
+    }
+
+    &--add-task {
+      margin-left: 0;
+    } 
+  }
+}

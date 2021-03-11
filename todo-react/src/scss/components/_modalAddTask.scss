@@ -1,0 +1,101 @@
+.modal-add-task {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  background-color: rgba(0, 0, 0, .5);
+  opacity: 1;
+  transition: all .4s linear;
+  
+  &__container {
+    min-width: 230px;
+    max-width: 500px;
+    margin: 0 .5em;
+    padding: 16px;
+
+    border-radius: 1em;
+    background-color: white;
+  }
+
+  &__body {
+    @include xs {
+      width: 286px;
+    }
+
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+    padding: 8px;
+
+    width: 450px;
+      
+    background: #F3F4F4;
+    border: 1px solid #DDDDDD;
+    border-radius: 12px;
+  }
+
+  &__field {
+    margin-bottom: 1em;
+    padding: .5em 1em;
+
+    color: #5A5A65;
+
+    border: 1px solid #DDDDDD;
+    border-radius: 12px;
+    outline: none;
+
+    &--title {
+      resize: none;
+      overflow: hidden;
+    }
+
+    &--user-list {
+      appearance: none; 
+    }
+
+    &--user {
+      font-size: 14px;
+      line-height: 17px;
+      letter-spacing: 0.1px;
+      color: #5A5A65;
+      white-space: nowrap;
+    }
+
+    &--comment{
+      resize: none;
+    }
+  }
+
+  &__field:last-child {
+    margin-bottom: 0;
+  }
+
+  &__title {
+    padding-top: 28px;
+    margin-bottom: 28px;
+
+    text-align: center;
+    font-size: 28px;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  &__button {
+    border: 1px solid #DDDDDD;
+    box-shadow: none;
+  }
+
+  &__button:hover {
+    background: #DDDDDD;
+  }
+}

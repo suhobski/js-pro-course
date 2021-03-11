@@ -1,0 +1,24 @@
+
+.board {
+
+  @include xs {
+    overflow: hidden;
+  }
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.right {
+  @include xs {
+    display: block;
+    min-width: 1px;
+    min-height: 1px;
+  }
+
+  display: none;
+}
